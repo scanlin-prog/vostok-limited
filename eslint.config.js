@@ -37,7 +37,10 @@ export default defineConfigWithVueTs(
       'no-unused-vars': 'off',
 
       // TS
-      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { varsIgnorePattern: '^props$' },
+      ],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/ban-ts-comment': 'off',
 

@@ -119,7 +119,7 @@ const shifts = ref<SelectItem[]>([]);
 // watchers
 watch(
   () => formData.value.city,
-  (newValue, oldValue) => {
+  (newValue) => {
     if (newValue != '') {
       const currentWorkshops = appStore.getWorkshops(newValue);
       if (currentWorkshops) {
@@ -132,7 +132,7 @@ watch(
 
 watch(
   () => formData.value.workshop,
-  (newValue, oldValue) => {
+  (newValue) => {
     if (newValue != '') {
       const currentWorkers = appStore.getWorkers(newValue);
       if (currentWorkers) {

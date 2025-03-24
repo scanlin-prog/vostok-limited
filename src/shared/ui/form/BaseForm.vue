@@ -27,13 +27,16 @@
 // imports
 import { BaseButton } from '@/shared/ui/buttons';
 
+import { toRefs } from 'vue';
 import { Form } from 'vee-validate';
+
 import type { PropType } from 'vue';
+import type { TypedSchema } from 'vee-validate';
 
 // props
 const props = defineProps({
   validationSchema: {
-    type: Object as PropType<any>,
+    type: Object as PropType<TypedSchema>,
     required: true,
   },
   submitText: {
@@ -43,6 +46,9 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['submit']);
+
+// refs
+const { validationSchema, submitText } = toRefs(props);
 
 // functions
 function onSubmit() {
